@@ -506,6 +506,10 @@ class LanguageServer:
                     "position": {"line": line, "character": column},
                 }
             )
+            self.logger.log(
+                f"Received references response from Language Server: {response}",
+                logging.DEBUG,
+            )
 
         ret: List[multilspy_types.Location] = []
         assert isinstance(response, list)
