@@ -509,12 +509,11 @@ class LanguageServer:
 
         ret: List[multilspy_types.Location] = []
 
-        if not isinstance(response, list):
-            self.logger.log(
-                f"Unexpected response from Language Server: {response}", logging.ERROR
-            )
-
         if not response:
+            self.logger.log(
+                "Empty response received from Language Server for references, defaulting to empty list",
+                logging.INFO,
+            )
             response = []
 
         assert isinstance(response, list)
