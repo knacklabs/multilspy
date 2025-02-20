@@ -506,12 +506,14 @@ class LanguageServer:
                     "position": {"line": line, "character": column},
                 }
             )
-            self.logger.log(
-                f"Received references response from Language Server: {response}",
-                logging.DEBUG,
-            )
 
         ret: List[multilspy_types.Location] = []
+
+        if not isinstance(response, list):
+            self.logger.log(
+                f"Unexpected response from Language Server: {response}", logging.ERROR
+            )
+
         assert isinstance(response, list)
         for item in response:
             assert isinstance(item, dict)
