@@ -514,6 +514,9 @@ class LanguageServer:
                 f"Unexpected response from Language Server: {response}", logging.ERROR
             )
 
+        if not response:
+            response = []
+
         assert isinstance(response, list)
         for item in response:
             assert isinstance(item, dict)
