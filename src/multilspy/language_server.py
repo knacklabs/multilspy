@@ -416,6 +416,13 @@ class LanguageServer:
                 }
             )
 
+        if not response:
+            self.logger.log(
+                "Empty response received from Language Server for definitions, defaulting to empty list",
+                logging.INFO,
+            )
+            response = []
+
         ret: List[multilspy_types.Location] = []
         if isinstance(response, list):
             # response is either of type Location[] or LocationLink[]
