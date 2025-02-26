@@ -111,6 +111,10 @@ class LanguageServer:
             from multilspy.language_servers.solargraph.solargraph import Solargraph
 
             return Solargraph(config, logger, repository_root_path)
+        elif config.code_language == Language.DART:
+            from multilspy.language_servers.dart.dart import DartServer
+
+            return DartServer(config, logger, repository_root_path)
         else:
             logger.log(
                 f"Language {config.code_language} is not supported", logging.ERROR
