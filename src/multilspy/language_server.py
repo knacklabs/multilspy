@@ -767,7 +767,11 @@ class SyncLanguageServer:
 
     @classmethod
     def create(
-        cls, config: MultilspyConfig, logger: MultilspyLogger, repository_root_path: str
+        cls,
+        config: MultilspyConfig,
+        logger: MultilspyLogger,
+        repository_root_path: str,
+        timeout: Optional[int] = None,
     ) -> "SyncLanguageServer":
         """
         Creates a language specific LanguageServer instance based on the given configuration, and appropriate settings for the programming language.
@@ -781,7 +785,8 @@ class SyncLanguageServer:
         :return SyncLanguageServer: A language specific LanguageServer instance.
         """
         return SyncLanguageServer(
-            LanguageServer.create(config, logger, repository_root_path)
+            LanguageServer.create(config, logger, repository_root_path),
+            timeout=timeout,
         )
 
     @contextmanager
