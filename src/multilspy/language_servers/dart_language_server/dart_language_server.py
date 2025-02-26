@@ -8,7 +8,7 @@ from multilspy.lsp_protocol_handler.server import ProcessLaunchInfo
 import json
 
 
-class DartServer(LanguageServer):
+class DartLanguageServer(LanguageServer):
     """
     Provides Dart specific instantiation of the LanguageServer class. Contains various configurations and settings specific to Dart.
     """
@@ -58,7 +58,7 @@ class DartServer(LanguageServer):
         return d
 
     @asynccontextmanager
-    async def start_server(self) -> AsyncIterator["DartServer"]:
+    async def start_server(self) -> AsyncIterator["DartLanguageServer"]:
         """
         Start the language server and yield when the server is ready.
         """
