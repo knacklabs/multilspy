@@ -20,7 +20,7 @@ async def test_multilspy_dart():
     params = {
         "code_language": code_language,
         "repo_url": "https://github.com/simonoppowa/OpenNutriTracker/",
-        "repo_commit": "main",
+        "repo_commit": "2df39185bdd822dec6a0e521f4c14e3eab6b0805",
     }
     with create_test_context(params) as context:
         lsp = LanguageServer.create(
