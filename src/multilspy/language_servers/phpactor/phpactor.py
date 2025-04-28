@@ -26,7 +26,7 @@ class Phpactor(LanguageServer):
             logger,
             repository_root_path,
             ProcessLaunchInfo(cmd=executable_path, cwd=repository_root_path),
-            "dart",
+            "php",
         )
 
     def setup_runtime_dependencies(self, logger: "MultilspyLogger") -> str:
@@ -149,8 +149,6 @@ class Phpactor(LanguageServer):
             )
 
             self.server.notify.initialized({})
-
-            print("Phpactor ready")
 
             yield self
 
