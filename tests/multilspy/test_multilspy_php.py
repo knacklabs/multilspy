@@ -1,5 +1,5 @@
 """
-This file contains tests for running the Phpactor Language Server.
+This file contains tests for running the Intelephense Language Server.
 """
 
 import pytest
