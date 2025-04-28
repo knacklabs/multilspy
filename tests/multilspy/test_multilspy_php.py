@@ -43,13 +43,26 @@ async def test_multilspy_php():
             assert isinstance(result, tuple)
             assert len(result) == 2
 
+            print("Result:", result)
+
             symbols = result[0]
-            for symbol in symbols:
-                del symbol["kind"]
 
             assert symbols == [
                 {
+                    "name": "Phpactor\\Extension\\LanguageServerIndexer\\Handler",
+                    "kind": 3,
+                    "range": {
+                        "start": {"line": 2, "character": 0},
+                        "end": {"line": 2, "character": 59},
+                    },
+                    "selectionRange": {
+                        "start": {"line": 2, "character": 10},
+                        "end": {"line": 2, "character": 58},
+                    },
+                },
+                {
                     "name": "WorkspaceSymbolHandler",
+                    "kind": 5,
                     "range": {
                         "start": {"line": 12, "character": 0},
                         "end": {"line": 43, "character": 1},
@@ -60,7 +73,8 @@ async def test_multilspy_php():
                     },
                 },
                 {
-                    "name": "provider",
+                    "name": "$provider",
+                    "kind": 7,
                     "range": {
                         "start": {"line": 14, "character": 36},
                         "end": {"line": 14, "character": 45},
@@ -72,6 +86,7 @@ async def test_multilspy_php():
                 },
                 {
                     "name": "__construct",
+                    "kind": 9,
                     "range": {
                         "start": {"line": 16, "character": 4},
                         "end": {"line": 19, "character": 5},
@@ -82,7 +97,20 @@ async def test_multilspy_php():
                     },
                 },
                 {
+                    "name": "$provider",
+                    "kind": 13,
+                    "range": {
+                        "start": {"line": 16, "character": 32},
+                        "end": {"line": 16, "character": 65},
+                    },
+                    "selectionRange": {
+                        "start": {"line": 16, "character": 56},
+                        "end": {"line": 16, "character": 65},
+                    },
+                },
+                {
                     "name": "methods",
+                    "kind": 6,
                     "range": {
                         "start": {"line": 21, "character": 4},
                         "end": {"line": 26, "character": 5},
@@ -94,8 +122,9 @@ async def test_multilspy_php():
                 },
                 {
                     "name": "symbol",
+                    "kind": 6,
                     "range": {
-                        "start": {"line": 31, "character": 4},
+                        "start": {"line": 28, "character": 4},
                         "end": {"line": 37, "character": 5},
                     },
                     "selectionRange": {
@@ -104,7 +133,44 @@ async def test_multilspy_php():
                     },
                 },
                 {
+                    "name": "$params",
+                    "kind": 13,
+                    "range": {
+                        "start": {"line": 32, "character": 8},
+                        "end": {"line": 32, "character": 37},
+                    },
+                    "selectionRange": {
+                        "start": {"line": 32, "character": 30},
+                        "end": {"line": 32, "character": 37},
+                    },
+                },
+                {
+                    "name": "Closure",
+                    "kind": 12,
+                    "range": {
+                        "start": {"line": 34, "character": 25},
+                        "end": {"line": 36, "character": 9},
+                    },
+                    "selectionRange": {
+                        "start": {"line": 34, "character": 25},
+                        "end": {"line": 36, "character": 9},
+                    },
+                },
+                {
+                    "name": "$params",
+                    "kind": 13,
+                    "range": {
+                        "start": {"line": 34, "character": 42},
+                        "end": {"line": 34, "character": 49},
+                    },
+                    "selectionRange": {
+                        "start": {"line": 34, "character": 42},
+                        "end": {"line": 34, "character": 49},
+                    },
+                },
+                {
                     "name": "registerCapabiltiies",
+                    "kind": 6,
                     "range": {
                         "start": {"line": 39, "character": 4},
                         "end": {"line": 42, "character": 5},
@@ -112,6 +178,30 @@ async def test_multilspy_php():
                     "selectionRange": {
                         "start": {"line": 39, "character": 20},
                         "end": {"line": 39, "character": 40},
+                    },
+                },
+                {
+                    "name": "$capabilities",
+                    "kind": 13,
+                    "range": {
+                        "start": {"line": 39, "character": 41},
+                        "end": {"line": 39, "character": 73},
+                    },
+                    "selectionRange": {
+                        "start": {"line": 39, "character": 60},
+                        "end": {"line": 39, "character": 73},
+                    },
+                },
+                {
+                    "name": "$capabilities",
+                    "kind": 13,
+                    "range": {
+                        "start": {"line": 41, "character": 8},
+                        "end": {"line": 41, "character": 21},
+                    },
+                    "selectionRange": {
+                        "start": {"line": 41, "character": 8},
+                        "end": {"line": 41, "character": 21},
                     },
                 },
             ]

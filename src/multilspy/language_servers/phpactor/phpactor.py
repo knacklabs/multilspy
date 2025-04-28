@@ -68,7 +68,7 @@ class Phpactor(LanguageServer):
             | stat.S_IXOTH,
         )
 
-        return f"{phpactor_executable_path} language-server -vvv"
+        return "intelephense --stdio"
 
     def _get_initialize_params(self, repository_absolute_path: str):
         """
