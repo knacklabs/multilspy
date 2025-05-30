@@ -196,6 +196,8 @@ class LanguageServer:
         """
         self.server_started = True
         print("Starting server...")
+
+        print("commit in multilspy")
         yield self
         self.server_started = False
 
